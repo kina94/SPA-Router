@@ -7,7 +7,7 @@ import {
 
 export const RouterContext = createContext<RouterContextProps>({
   currentPath: "",
-  navigate: () => {},
+  setCurrentPath: () => {},
 });
 
 const Router = ({ children }: RouterProps) => {
@@ -19,10 +19,7 @@ const Router = ({ children }: RouterProps) => {
 
   const contextValue = {
     currentPath,
-    navigate: (path: string) => {
-      window.history.pushState(null, "", path);
-      setCurrentPath(path);
-    },
+    setCurrentPath,
   };
 
   return (

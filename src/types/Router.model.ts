@@ -4,7 +4,7 @@ export type RouterProps = {
 
 export type RouterContextProps = {
   currentPath: string;
-  navigate: (path: string) => void;
+  setCurrentPath: (path: string) => void;
 };
 
 export type RouteProps = {
